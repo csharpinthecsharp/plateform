@@ -1,7 +1,58 @@
-[gd_scene load_steps=29 format=3 uid="uid://eqxh3u5v7e11"]
+[gd_scene load_steps=43 format=3 uid="uid://eqxh3u5v7e11"]
 
 [ext_resource type="Script" uid="uid://b3lr5v0sd8utc" path="res://character_body_2d.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://vs2ghlfv60p1" path="res://assets/player_sprites.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://cceo32nktoo2j" path="res://assets/player_sprites_rev.png" id="3_cxr5p"]
+[ext_resource type="AudioStream" uid="uid://bd1hptvq4lhp" path="res://assets/sounds/WAV/SFX/fall_and_die.wav" id="3_kne1u"]
+[ext_resource type="FontFile" uid="uid://dcobky5m3cdn3" path="res://assets/Minecraft.ttf" id="4_e80uo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kne1u"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(0, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxr5p"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(56, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdg3f"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(112, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv870"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(168, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pi4m"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(224, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg6sq"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(280, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h84ma"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(336, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47wu6"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(392, 336, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n1s8"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(0, 392, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vjad"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(56, 392, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt0h1"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(112, 392, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd78s"]
+atlas = ExtResource("1_wtcfe")
+region = Rect2(168, 392, 56, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e48y"]
 atlas = ExtResource("1_wtcfe")
@@ -27,25 +78,9 @@ region = Rect2(224, 0, 56, 56)
 atlas = ExtResource("1_wtcfe")
 region = Rect2(280, 0, 56, 56)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kpjcp"]
-atlas = ExtResource("1_wtcfe")
-region = Rect2(0, 168, 56, 56)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kne1u"]
-atlas = ExtResource("1_wtcfe")
-region = Rect2(56, 168, 56, 56)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_e80uo"]
 atlas = ExtResource("1_wtcfe")
 region = Rect2(112, 168, 56, 56)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cxr5p"]
-atlas = ExtResource("1_wtcfe")
-region = Rect2(168, 168, 56, 56)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tdg3f"]
-atlas = ExtResource("1_wtcfe")
-region = Rect2(224, 168, 56, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtqjt"]
 atlas = ExtResource("1_wtcfe")
@@ -87,6 +122,18 @@ region = Rect2(336, 224, 56, 56)
 atlas = ExtResource("1_wtcfe")
 region = Rect2(392, 224, 56, 56)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ictha"]
+atlas = ExtResource("3_cxr5p")
+region = Rect2(336, 112, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jgrc"]
+atlas = ExtResource("3_cxr5p")
+region = Rect2(280, 112, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wy67"]
+atlas = ExtResource("3_cxr5p")
+region = Rect2(224, 112, 56, 56)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_efikj"]
 atlas = ExtResource("1_wtcfe")
 region = Rect2(56, 112, 56, 56)
@@ -101,6 +148,47 @@ region = Rect2(168, 112, 56, 56)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kne1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxr5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdg3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv870")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pi4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg6sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h84ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47wu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n1s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vjad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt0h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd78s")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0e48y")
@@ -126,19 +214,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kpjcp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kne1u")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_e80uo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cxr5p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tdg3f")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dtqjt")
@@ -172,7 +248,21 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 20.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ictha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jgrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wy67")
+}],
+"loop": false,
+"name": &"left",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -200,9 +290,31 @@ script = ExtResource("1_kpjcp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(0, -28)
 sprite_frames = SubResource("SpriteFrames_rj586")
-animation = &"right"
+animation = &"left"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, -10.912)
 shape = SubResource("CircleShape2D_wtcfe")
+
+[node name="death_music" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("3_kne1u")
+
+[node name="death_title" type="RichTextLabel" parent="CharacterBody2D"]
+visible = false
+modulate = Color(1, 0, 0.0588235, 1)
+offset_left = -34.2814
+offset_top = -61.1072
+offset_right = 64.7186
+offset_bottom = -21.1072
+theme_override_fonts/normal_font = ExtResource("4_e80uo")
+text = "💀 You died. 
+"
+
+[node name="health_title" type="RichTextLabel" parent="CharacterBody2D"]
+offset_left = -35.7098
+offset_top = -80.7488
+offset_right = 105.29
+offset_bottom = -40.7488
+theme_override_colors/font_selected_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_e80uo")

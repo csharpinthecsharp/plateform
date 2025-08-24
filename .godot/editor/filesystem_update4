@@ -1,8 +1,7 @@
 res://Game.tscn
-res://Player.tscn
-res://animated_sprite_2d.gd
 res://character_body_2d.gd
-res://audio_stream_player_2d.gd
-res://check_box.gd
 res://spawn_music.gd
+res://Player.tscn
 res://player.gd
+res://global.tscn
+res://Global.gd
