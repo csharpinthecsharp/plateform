@@ -1,4 +1,1 @@
-# plateform
-# plateform
-# plateform
-# plateform
+# PLATEFORM is a plateformer game.
