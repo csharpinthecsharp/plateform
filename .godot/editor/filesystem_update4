@@ -1,7 +1,3 @@
 res://Game.tscn
-res://character_body_2d.gd
-res://spawn_music.gd
 res://Player.tscn
-res://player.gd
-res://global.tscn
-res://Global.gd
+res://character_body_2d.gd

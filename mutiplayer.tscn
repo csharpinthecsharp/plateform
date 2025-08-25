@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3ec62dqofhas"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_wea4l"]
+
+[node name="Mutiplayer" type="Node2D"]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_wea4l")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("../MultiplayerSynchronizer")

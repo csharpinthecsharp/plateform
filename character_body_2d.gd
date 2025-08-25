@@ -7,6 +7,7 @@ const MAX_CR = 130
 var HEALTH = MAX_HEALTH
 var COUNTDOWN_RESPAWN = MAX_CR
 var is_jumping = 0
+const loc_zone1_spawn = Vector2(0, 0)
 
 func _physics_process(delta: float) -> void:
 	if HEALTH <= 0:
@@ -20,10 +21,9 @@ func _physics_process(delta: float) -> void:
 			COUNTDOWN_RESPAWN = MAX_CR
 			HEALTH = MAX_HEALTH
 			$death_title.visible = false
+			velocity.y = 0
+			position = loc_zone1_spawn
 		return
-
-	$health_title.clear()
-	$health_title.add_text(str(HEALTH) + "❤️")
 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -31,11 +31,19 @@ func _physics_process(delta: float) -> void:
 		if is_jumping == 1:
 			is_jumping = 0  # Reset jump state when landing
 
+	# Handle void death
+	if velocity.y > 1000:
+		HEALTH = 0
 	# Handle jump
 	if HEALTH > 0 and Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		$AnimatedSprite2D.play("jump")
-		HEALTH -= 1
+		var direction := Input.get_axis("move_left", "move_right")
+		if direction < 0:
+			$AnimatedSprite2D.play("jump_left")
+		elif direction > 0:
+			$AnimatedSprite2D.play("jump_right")
+		else:
+			$AnimatedSprite2D.play("jump")  # Neutral jump
 		is_jumping = 1
 
 	# Movement
